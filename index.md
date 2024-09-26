@@ -45,7 +45,7 @@ These are the only noteworthy settings for my virtual machine. The rest of the s
 - _Figure 4_: The network interface section. Notice how even Azure warns me that enabling RDP for my machine is probably a bad idea.
 
 <p align="center">
-  <img width="768" height="515" src="assets/fig4.png">
+  <img width="768" height="515" src="assets/fig5.png">
 </p>
 
 Aside from that, the other settings are default. We will not be needing network accelerating or load balancing for this lab, since this is only a single VM. With all settings in place, I am now ready to validate and create my virtual machine.
