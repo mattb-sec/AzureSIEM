@@ -52,4 +52,12 @@ Aside from that, the other settings are default. We will not be needing network 
 
 # Creating and Deploying Sentinel
 
-The virtual machine will take time to create, which is perfect because now I can use that time to deploy Sentinel. Using the search bar, I navigate to Sentinel's page and get it started by clicking the "Create Microsoft Sentinel" button.
+The virtual machine will take time to create, which is perfect because now I can use that time to deploy Sentinel. Using the search bar, I navigate to Sentinel's page and get it started by clicking the "Create Microsoft Sentinel" button. I am absolutely delighted to see how user-friendly Azure is, and how simple it is to create my own instance of Sentinel.
+
+The first thing I need to do is create a log analytics workspace. This is so I can give Sentinel something to read off of. As mentioned, my version of Sentinel will be associated with the MattGroup resource group. From there, I give the workspace the name "Mattb-LogAnalytics" and set up the region to be East Australia. It is important that the region of my virtual machine and log analytics workspace line up so that I can minimize response time as much as possible. If, for instance, I set my workspace to be in the Western United States, but still have my VM's region as East Australia, there can be some serious lag time between when the event occurred, and when it was actually recorded.
+
+- _Figure 5_: The project details of my workspace creation page. I have associated this space with MattGroup and given it the region of East Australia.
+
+<p align="center">
+  <img width="785" height="330" src="assets/fig7.png">
+</p>
