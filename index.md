@@ -40,5 +40,16 @@ Per standard hardening procedures, you want to disable any inbound ports that ar
   <img width="789" height="290" src="assets/fig3.png">
 </p>
 
+These are the only noteworthy settings for my virtual machine. The rest of the settings are default, although I did find this notice in the network interface section interesting:
 
+- _Figure 4_: The network interface section. Notice how even Azure warns me that enabling RDP for my machine is probably a bad idea.
 
+<p align="center">
+  <img width="768" height="515" src="assets/fig4.png">
+</p>
+
+Aside from that, the other settings are default. We will not be needing network accelerating or load balancing for this lab, since this is only a single VM. With all settings in place, I am now ready to validate and create my virtual machine.
+
+# Creating and Deploying Sentinel
+
+The virtual machine will take time to create, which is perfect because now I can use that time to deploy Sentinel. Using the search bar, I navigate to Sentinel's page and get it started by clicking the "Create Microsoft Sentinel" button.
