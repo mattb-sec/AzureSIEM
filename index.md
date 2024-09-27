@@ -74,6 +74,12 @@ At this point, I have a running virtual machine, an instance of Sentinel, and a 
   <img width="811" height="153" src="assets/fig12.png">
 </p>
 
-Each of these components has data to share, but no way to share it with each other. Therefore, we need to connect the data with a...Data connector. First I need to get one. I navigate to the content hub to view the known data connectors approved for use in Azure.
+Each of these components has data to share, but no way to share it with each other. Therefore, we need to connect the data with a...Data connector. First I need to get one. I navigate to the content hub to view the known data connectors approved for use in Azure. For this lab, I will be using Windows Security Events via Azure Monitor Agent.
+
+- _Figure 7_: The Windows Security Events data connector information panel. As you can see, the function of this data connector is to ingest events in my virtual machine to my log analytics workspace and, by proxy, Sentinel.
+
+<p align="center">
+  <img width="434" height="454" src="assets/fig14.png">
+</p>
 
 
