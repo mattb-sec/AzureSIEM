@@ -144,6 +144,16 @@ Now with this query in place, I no longer get any results. This is a good thing,
   <img width="727" height="430" src="assets/fig22.png">
 </p>
 
+From there, I can now get into the specifics of my new rule. I now navigate to the "query scheduling" section of Sentinel's rule creation page. I have it set so that Sentinel runs the query every five minutes and looks up data from the last five minutes. I believe that these should be regular enough to capture the activity I want to see.
+
+Next is the alert threshold. Personally, I believe one successful, unauthorized sign in is one too many. Therefore, the alert should be generated anytime the query results are greater than zero.
+
+- _Figure 15_: The "query scheduling" and "alert threshold" sections of the rule creation page. I have it set so that Sentinel runs the query every five minutes and looks up data from the last five minutes, and alerts are generated if even a single result appears. I also have it so all events are grouped into a single alert.
+
+<p align="center">
+  <img width="1036" height="700" src="assets/fig23.png">
+</p>
+
 
 
 
