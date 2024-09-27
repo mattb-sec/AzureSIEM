@@ -56,8 +56,24 @@ The virtual machine will take time to create, which is perfect because now I can
 
 The first thing I need to do is create a log analytics workspace. This is so I can give Sentinel something to read off of. As mentioned, my version of Sentinel will be associated with the MattGroup resource group. From there, I give the workspace the name "Mattb-LogAnalytics" and set up the region to be East Australia. It is important that the region of my virtual machine and log analytics workspace line up so that I can minimize response time as much as possible. If, for instance, I set my workspace to be in the Western United States, but still have my VM's region as East Australia, there can be some serious lag time between when the event occurred, and when it was actually recorded.
 
-- _Figure 5_: The project details of my workspace creation page. I have associated this space with MattGroup and given it the region of East Australia.
+- _Figure 5_: The project details of my workspace creation page. I have associated this space with MattGroup and given it the region of East Australia. Also, I have not set up MFA for this workspace.
 
 <p align="center">
   <img width="785" height="330" src="assets/fig7.png">
 </p>
+
+With my parameters in place. I hit "Review + Create" and my workspace is created. The next step is to add Sentinel to my log analytics workspace. This is done by simply clicking the newly created workspace in the directory.
+
+# Putting It All Together
+
+At this point, I have a running virtual machine, an instance of Sentinel, and a log analytics workspace. Now I just need to put it all together so I can start gathering my data. I have already paired the workspace with Sentinel, so now the next step is to take the event logs of my virtual machine and send them to the log analytics workspace.
+
+- _Figure 6_: The "agents" panel of my Windows virtual machine. Currently, it says there are zero Windows computers connected. This is a problem because there are all these events my VM is logging, but it has nowhere to send these logs.
+
+<p align="center">
+  <img width="811" height="153" src="assets/fig12.png">
+</p>
+
+Each of these components has data to share, but no way to share it with each other. Therefore, we need to connect the data with a...Data connector. First I need to get one. I navigate to the content hub to view the known data connectors approved for use in Azure.
+
+
