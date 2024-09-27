@@ -82,4 +82,46 @@ Each of these components has data to share, but no way to share it with each oth
   <img width="434" height="454" src="assets/fig14.png">
 </p>
 
+After my data connector has installed, I head to my data connectors menu and refresh. I am then greeted with two possible connectors.
+
+- _Figure 8_: My available data connectors in the data connector menu. Notice that there is a current version and a legacy version.
+
+<p align="center">
+  <img width="999" height="369" src="assets/fig15.png">
+</p>
+
+I have no reason to use the legacy version, and in cyber security, it is important to always stay up to date. Therefore, I will be running with the most recent version of Windows Security Events. With my selection made, I open the data connector and set up my data collection rule. I will be naming this "WindowsEventstoSentinel".
+
+- _Figure 9_: The rule details page for my data collection rule. I have set the name and associated this rule with my resource group.
+
+<p align="center">
+  <img width="742" height="187" src="assets/fig17.png">
+</p>
+
+I will now select the resources from which to collect data. I select my virtual machine which, in turn, selects everything above it in the hierarchy.
+
+- _Figure 10_: The resources tab for the data collection rule creation. Notice that everything is selected, so data will be ingested from my virtual machine and anything else that is associated with my resource group.
+
+<p align="center">
+  <img width="810" height="183" src="assets/fig18.png">
+</p>
+
+I then configure the rule so that the data collection records all security events, then finalize my selection. The data connector is now created.
+
+- _Figure 11_: The resulting screen for my data connector after creating the data collection rule. Notice how, immediately after its implementation, it is already gathering data.
+
+<p align="center">
+  <img width="382" height="626" src="assets/fig19.png">
+</p>
+
+With these steps completed, my data is connected and my components are working in total harmony. My virtual machine is sending its logs via the data connector to my log analytics workspace to then be evaluated by Sentinel.
+
+# Creating the Rule for Sentinel
+
+
+
+
+
+
+
 
