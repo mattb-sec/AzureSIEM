@@ -118,7 +118,15 @@ With these steps completed, my data is connected and my components are working i
 
 # Creating the Rule for Sentinel
 
+At this point, I have set up my virtual machine and it is ready to be experimented on and monitored. This monitoring will be done by my instance of Sentinel. Sentinel gathers data and generates alerts based off the rules you give it. I will be creating my rules by first creating queries to view the data I want to see. The objective here is to create a rule that checks for successful sign ins via RDP. If that criteria is met, an incident should be created.
 
+The first thing I want to do is play around with the search queries and refine it so I find exactly what I want. To begin, I know I want Sentinel to view instances where there were successful logins. Therefore, I want to filter out my logs so that any activity on the virtual machine involving the work "success" is logged. Like so:
+
+- _Figure 12_: The first search query for logs through Sentinel. The query plainly states to view recorded security events where the activity section of the log contains the word "success". Though a bit vague, this is a generally effective way to view any instances of a successful login.
+
+<p align="center">
+  <img width="1318" height="572" src="assets/fig20.png">
+</p>
 
 
 
