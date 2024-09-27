@@ -122,13 +122,27 @@ At this point, I have set up my virtual machine and it is ready to be experiment
 
 The first thing I want to do is play around with the search queries and refine it so I find exactly what I want. To begin, I know I want Sentinel to view instances where there were successful logins. Therefore, I want to filter out my logs so that any activity on the virtual machine involving the work "success" is logged. Like so:
 
-- _Figure 12_: The first search query for logs through Sentinel. The query plainly states to view recorded security events where the activity section of the log contains the word "success". Though a bit vague, this is a generally effective way to view any instances of a successful login.
+- _Figure 12_: The first search query for logs through Sentinel. The query plainly states to view recorded security events where the activity section of the log contains the word "success". Though a bit vague, this is a generally effective way to view any instances of a successful login. Notice that there are already a couple of hits.
 
 <p align="center">
   <img width="1318" height="572" src="assets/fig20.png">
 </p>
 
+Although I have some results for this query, these are events that originated from the system, so they should be disregarded. Therefore, there is some additional refinement that needs to happen. Luckily, Azure's "not" (!) operator should come in handy to filter out any instances of successful logins pertaining to the system.
 
+- _Figure 13_: My refined query. This time, the query tells Sentinel to view all security event logs where the word "success" appears in the activity, but the originating account does not contain the word "system". This should be sufficient for filtering out any security event logs coming from the system.
+
+<p align="center">
+  <img width="1318" height="402" src="assets/fig21.png">
+</p>
+
+Now with this query in place, I no longer get any results. This is a good thing, as it implies that my two results involving the system have been filtered out. I also find it highly unlikely my VM has already been breached, so I must therefore conclude that there simply are not any results yet. Satisfied, I can use my query to create a new rule for Sentinel.
+
+- _Figure 14_: The creation of the new Sentinel rule. I am giving it the name "Successful Local Sign Ins" with a severity of "medium". I also configure it so that it only registers "initial access". This means that the incident will only be recorded if it is a user's first time signing on to the virtual machine.
+
+<p align="center">
+  <img width="727" height="430" src="assets/fig22.png">
+</p>
 
 
 
